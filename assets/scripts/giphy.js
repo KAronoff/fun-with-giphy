@@ -79,12 +79,35 @@ $(document).ready(function(){
       .attr("data-state", "still");
 
       $("#giphyArea").append($resultImg);
-      }
+      };
       
-    })
-  }
-  function stillToAnimated (url){
-    var dataForStillToAnimation = $(this).attr("data-topic")
-    
-  }
+    });
+  };
+  // function stillToAnimated (url){
+  //   var dataStill = $(this).attr("data-still");
+  //   var dataAnimated = $(this).attr("data-animate");
+  //   var dataState = $(this).attr("data-state");
+  //   var srcImage = $(this).attr("src")
+
+  //   if (dataState === "still"){
+  //     srcImage = $(this).attr("src", dataAnimated)
+  //   }
+
+  //   else {
+  //     srcImage = $(this).attr("src", dataStill);
+  //   }
+
+    $(document).on("click", ".imgGifResult", function(){
+      var state = $(this).attr("data-state")
+      console.log("you clicked me")
+      if (state === "still"){
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+      }
+      else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+      }
+    });
+  
 });
