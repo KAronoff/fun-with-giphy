@@ -68,11 +68,11 @@ $(document).ready(function(){
       // animated downsized image url path: giphyResult.data[i].images.downsized.url
       // still downsized image url path: giphyResult.data[i].images.downsized_still.url
       for (i=0; i < parameters.limit ; i++){
-        animatedURL = giphyResult.data[i].images.fixed_width_small.url;
-        stillURL = giphyResult.data[i].images.fixed_width_small_still.url;
+        animatedURL = giphyResult.data[i].images.downsized.url;
+        stillURL = giphyResult.data[i].images.downsized_still.url;
       
       var $resultImg = $("<img>")
-      .addClass(".imgGifResult")
+      .addClass(".imgGifResult my-3 mx-3")
       .attr("src", stillURL)
       .attr("data-still", stillURL)
       .attr("data-animate", animatedURL)
