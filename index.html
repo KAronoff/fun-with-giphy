@@ -10,23 +10,46 @@
 <title>Fun With Giphy</title>
 </head>
 <body>
-<div id="button-area" class="container">
-<!-- buttons go here -->
 
-</div>
-
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Find a Gif!</h1>
+      <p class="lead">This is a simple Gif search, using Giphy. Type your query into the search bar, and find a gif!</p>
+    </div>
+  </div>
 <div class="row">
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-3">
         <!-- form goes here -->
+      
       <form>
-        <label for="search">Search area</label>
-        <input type=text id="searchTxt">
-        <input id="searchBtn" type="submit" value="search giph">
-      </form>
-        
+          <div class="container form-group">
+            <label for="search">Search for a gif</label>
+            <input type=text class="form-control" id="searchTxt">
+            <label for="numInput">Number of Results (1-25)</label>
+            <input type="number" name="quantity" min="1" max="25" id= "numInput">
+
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <input id="searchBtn" class="btn btn-success my-3" type="submit" value="search gif">
+                <input id="clearBtn" class="btn btn-secondary my-3" value="Clear Buttons">
+            </div>
+
+          </form>
+        </div>
+        <div class="container">
+          
+          <button class="btn btn-primary gifBtn" type="button" data-topic="Kim Possible" data-searchNum="10">Kim Possible</button>
+          <button class="btn btn-primary gifBtn" type="button" data-topic="Pusheen" data-searchNum="10">Pusheen</button>
+          <button class="btn btn-primary gifBtn" type="button" data-topic="Grumpy Cat" data-searchNum="10">Grumpy Cat</button>
+          <div id="button-area">
+            <!-- buttons go here -->
+          </div>
+        </div>
     </div>
 
-    <div id="giphyArea" class="col-12 col-md-8">
+    <div class="col-12 col-md-9">
+      <div class="container" id="giphyArea">
+        
+      </div>
       <!-- giphys go here -->
     </div>
   

@@ -5,16 +5,23 @@ $(document).ready(function(){
 // when user searches a new button is created and giphs are displayed for that topic 
 
 // array of buttons 
-  var topicArr = ["Grumpy Cat", "Pusheen", "Kim Possible"];
+  var topicArr = [];
   //  other global variables: url paths
  var stillURL;
  var animatedURL;
 // function to display buttons 
   // function needs to take the input inside the search area and then add a button
-  function displayBtn (topic){
+  function displayBtn (topic, number){
+    
+    if (number > 25){
+      return false;
+    }
+
       var $newbtn = $("<button>")
-      .addClass("gifBtn mx-3 my-3")
+      .addClass("btn btn-primary gifBtn")
+      .attr("type", "button")
       .attr("data-topic", topic)
+      .attr("data-searchNum", number)
       .text(topic);
 
       $("#button-area").prepend($newbtn);
@@ -31,37 +38,46 @@ $(document).ready(function(){
 
     // create variable to save the data topic
     var $dataTopic = $(this).attr("data-topic")
+    var $dataNumber = $(this).attr("data-searchNum");
+  
     
     // when the user clicks on the button the page will add to the gif display area
-    searchForGiphy($dataTopic);
+    searchForGiphy($dataTopic, $dataNumber);
   })
   // // click event for the search (submit) button
   $("#searchBtn").on("click", function(){
     event.preventDefault();
     // take the information in the input field and save it as a variable
     $("#giphyArea").empty();
-    var searchInputVar = $("#searchTxt").val()
-    console.log(searchInputVar);
+    var searchInputVar = $("#searchTxt").val();
+    var numInputVar = $("#numInput").val();
+    console.log(searchInputVar, numInputVar);
     // display the new button
-    displayBtn(searchInputVar);
+    displayBtn(searchInputVar, numInputVar);
     
     // have the variable be able to run through the ajax search function
-    searchForGiphy(searchInputVar);
+    searchForGiphy(searchInputVar, numInputVar);
 
     // clear the search field
     $("#searchTxt").val("");
+    $("#numInput").val("");
   })
 
-  function searchForGiphy (searchField){
+  function searchForGiphy (searchField, numField){
+    if (numField >25){
+      alert("You searched for too many results. Please choose 1-25")
+      return false;
+    }
     var searchTermVar = searchField;
     var queryURL = "https://api.giphy.com/v1/gifs/search?"
     var parameters = {"api_key":"pWCQRgiCN7dmL6YFmnlCyJz6px01doDw"};
     var offsetNum = Math.floor((Math.random()*10));
     console.log(offsetNum)
     parameters.q = searchTermVar;
-    parameters.limit = 10;
+    parameters.limit = numField;
     parameters.rating = "pg"
     parameters.offset = offsetNum;
+
     $.ajax ({
       url: queryURL+$.param(parameters),
       method: "GET"
@@ -105,17 +121,8 @@ $(document).ready(function(){
 
   $(document).on("click", "img", stillToAnimated);
 
-    // $(document).on("click", ".imgGifResult", function(){
-    //   var state = $(this).attr("data-state")
-    //   console.log("you clicked me")
-    //   if (state === "still"){
-    //     $(this).attr("src", $(this).attr("data-animate"));
-    //     $(this).attr("data-state", "animate");
-    //   }
-    //   else {
-    //     $(this).attr("src", $(this).attr("data-still"));
-    //     $(this).attr("data-state", "still");
-    //   }
-    // });
+  $("#clearBtn").on("click", function(){
+    $("#button-area").empty();
+  })
   
 });

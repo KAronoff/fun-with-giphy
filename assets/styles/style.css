@@ -1,0 +1,29 @@
+.gifBtn {
+  display: block;
+  width: 100%;
+}
+
+#searchTxt {
+  padding-left: 5%;
+  
+}
+
+#numInput {
+  width: 25%;
+  display: block;
+}
+
+#searchBtn {
+  width: 30%;
+}
+
+#clearBtn {
+  width: 50%;
+}
+
+
+
+form {
+  background-color: aquamarine;
+  
+}
