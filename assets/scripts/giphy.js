@@ -5,7 +5,7 @@ $(document).ready(function(){
 // when user searches a new button is created and giphs are displayed for that topic 
 
 // array of buttons 
-  var topicArr = ["Cat", "Lion", "Snow Leopard"];
+  var topicArr = ["Grumpy Cat", "Pusheen", "Kim Possible"];
   //  other global variables: url paths
  var stillURL;
  var animatedURL;
