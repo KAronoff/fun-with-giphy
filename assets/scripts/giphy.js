@@ -56,9 +56,12 @@ $(document).ready(function(){
     var searchTermVar = searchField;
     var queryURL = "https://api.giphy.com/v1/gifs/search?"
     var parameters = {"api_key":"pWCQRgiCN7dmL6YFmnlCyJz6px01doDw"};
+    var offsetNum = Math.floor((Math.random()*10));
+    console.log(offsetNum)
     parameters.q = searchTermVar;
     parameters.limit = 10;
-    parameters.rating = "g";
+    parameters.rating = "pg"
+    parameters.offset = offsetNum;
     $.ajax ({
       url: queryURL+$.param(parameters),
       method: "GET"
