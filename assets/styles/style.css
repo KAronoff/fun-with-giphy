@@ -26,7 +26,13 @@ body {
   border-color: #88A09E;
   
   }
+  .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-success.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .2rem rgba(217,219,219,.5);
+    }
 
+    .btn-primary:focus {
+      box-shadow: 0 0 0 .2rem rgba(217,219,219,.5);
+      }
   .btn-success {
     color: #323B3A;
     background-color: #88A09E;
@@ -48,11 +54,11 @@ body {
     }
   
   .btn-success:not(:disabled):not(.disabled):active:focus, .show>.btn-success.dropdown-toggle:focus {
-    box-shadow: 0 0 0 .2rem rgba(50,59,58,.5);
+    box-shadow: 0 0 0 .2rem rgba(28,33,32,.5);
     }
 
   .btn-success.focus, .btn-success:focus {
-    box-shadow: 0 0 0 .2rem rgba(50,59,58,.5);
+    box-shadow: 0 0 0 .2rem rgba(217,219,219,.5)
     }
 #btnContainer {
   background-color: #C9ADA7;
@@ -82,8 +88,9 @@ body {
   width: 50%;
 }
 
-
-
+#information {
+  box-shadow: 5px 5px 30px;
+}
 form {
   background-color: #C9ADA7;
   

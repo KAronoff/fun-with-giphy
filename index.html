@@ -16,11 +16,11 @@
 <div class="jumbotron jumbotron-fluid my-0">
     <div class="container">
       <h1 class="display-4">Find a Gif!</h1>
-      <p class="lead">This is a simple Gif search, using Giphy. Type your query into the search bar, and find a gif!</p>
+      <p class="lead">Sometimes, a Gif says it best</p>
     </div>
   </div>
 <div class="row">
-    <div id="btnContainer" class="col-12 col-md-3">
+    <aside id="btnContainer" class="col-12 col-md-3">
         <!-- form goes here -->
         <div class="card-body">
           <h5 class="card-title">Find Gifs</h5>
@@ -31,9 +31,9 @@
               <label for="numInput">Number of Results (1-25)</label>
               <input type="number" name="quantity" min="1" max="25" id= "numInput">
   
-              <div class="btn-group" role="group" aria-label="Basic example">
+              <div class="btn-group" role="group" aria-label="Gif Control Buttons">
                   <input id="searchBtn" class="btn btn-success my-3" type="submit" value="search">
-                  <input id="clearBtn" class="btn btn-success my-3" value="Clear">
+                  <input id="clearBtn" class="btn btn-success my-3" type="button" value="Clear">
               </div>
   
             </form>
@@ -43,22 +43,55 @@
         <div class="container">
           <div class="card-body">
             <h5 class="card-title">Previous Searches</h5>
-            <button class="btn btn-primary gifBtn" type="button" data-topic="Kim Possible" data-searchNum="10">Kim Possible - 10</button>
-          <button class="btn btn-primary gifBtn" type="button" data-topic="Pusheen" data-searchNum="10">Pusheen - 10</button>
-          <button class="btn btn-primary gifBtn" type="button" data-topic="Grumpy Cat" data-searchNum="10">Grumpy Cat - 10</button>
-          <div id="button-area">
-            <!-- buttons go here -->
-          </div>
+            <div class="btn-group-vertical" role="group" aria-label="Previous Search Button">
+              <button class="btn btn-primary gifBtn" type="button" data-topic="Kim Possible" data-searchNum="10">Kim Possible - 10</button>
+              <button class="btn btn-primary gifBtn" type="button" data-topic="Pusheen" data-searchNum="10">Pusheen - 10</button>
+              <button class="btn btn-primary gifBtn" type="button" data-topic="Grumpy Cat" data-searchNum="10">Grumpy Cat - 10</button>
+              <div id="button-area">
+                <!-- buttons go here -->
+              </div>
+            </div>
           </div>
           
         </div>
-    </div>
+    </aside>
 
     <div id="themGifs" class="col-12 col-md-9">
       <div class="container" id="giphyArea">
-        
+        <!-- giphys go here -->
+        <!-- instructions for use -->
+        <div id="information" class="card my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Some information to help you get started...</h5>
+            <p class="card-text text-left">
+              <ol>
+                <li>
+                  Fill in search topic and the number of gifs you want!
+                </li>
+                <li>
+                  When you press submit, two things happen:
+                  <ul>
+                    <li>
+                      You search results will appear on the right side of this page.
+                    </li>
+                    <li>
+                      A button will appear in the previous search area. This button, when clicked, brings up the same topic and number of gifs
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  To change the number of results from a previous search, type in the desired number in the <emphasis>Number of Results</emphasis> area, then click on one of your previous search buttons.
+                  The new number will be pinned to the button for future use. To change the number again, repeat the process.
+                </li>
+                <li>
+                  When you're ready to clear the buttons, press <emphasis>clear</emphasis>. This clears all but the 3 original buttons, and the gif area.
+                </li>
+              </ol>
+            </p>
+          </div>
+        </div>
       </div>
-      <!-- giphys go here -->
+      
     </div>
   
 </div>
