@@ -22,7 +22,7 @@ $(document).ready(function(){
       .attr("type", "button")
       .attr("data-topic", topic)
       .attr("data-searchNum", number)
-      .text(topic);
+      .text(topic + " - " + number);
 
       $("#button-area").prepend($newbtn);
   }
@@ -35,10 +35,25 @@ $(document).ready(function(){
   $(document).on("click", ".gifBtn", function(){
     // clear the #giphyArea
     $("#giphyArea").empty();
-
-    // create variable to save the data topic
+    var changeThatNumber = $("#numInput").val().trim();
     var $dataTopic = $(this).attr("data-topic")
-    var $dataNumber = $(this).attr("data-searchNum");
+
+    if (changeThatNumber === ""){
+      var $dataNumber = $(this).attr("data-searchNum");
+    }
+    else {
+      $dataNumber = changeThatNumber;
+
+      /* change the data-attr of the .gifBtn to the new number from the form input
+        take the that number and print it to the page
+      */
+
+      $(this).attr("data-searchNum", $dataNumber)
+      .text(`${$dataTopic} - ${$dataNumber}`);
+    }
+    // create variable to save the data topic
+    
+    
   
     
     // when the user clicks on the button the page will add to the gif display area

@@ -6,47 +6,55 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Poppins" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles/style.css">
+
 <title>Fun With Giphy</title>
 </head>
 <body>
 
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid my-0">
     <div class="container">
       <h1 class="display-4">Find a Gif!</h1>
       <p class="lead">This is a simple Gif search, using Giphy. Type your query into the search bar, and find a gif!</p>
     </div>
   </div>
 <div class="row">
-    <div class="col-12 col-md-3">
+    <div id="btnContainer" class="col-12 col-md-3">
         <!-- form goes here -->
-      
-      <form>
-          <div class="container form-group">
-            <label for="search">Search for a gif</label>
-            <input type=text class="form-control" id="searchTxt">
-            <label for="numInput">Number of Results (1-25)</label>
-            <input type="number" name="quantity" min="1" max="25" id= "numInput">
-
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <input id="searchBtn" class="btn btn-success my-3" type="submit" value="search gif">
-                <input id="clearBtn" class="btn btn-secondary my-3" value="Clear Buttons">
-            </div>
-
-          </form>
+        <div class="card-body">
+          <h5 class="card-title">Find Gifs</h5>
+          <form>
+            <div class="container form-group">
+              <label for="search">Search for a gif</label>
+              <input type=text class="form-control" id="searchTxt">
+              <label for="numInput">Number of Results (1-25)</label>
+              <input type="number" name="quantity" min="1" max="25" id= "numInput">
+  
+              <div class="btn-group" role="group" aria-label="Basic example">
+                  <input id="searchBtn" class="btn btn-success my-3" type="submit" value="search gif">
+                  <input id="clearBtn" class="btn btn-success my-3" value="Clear Buttons">
+              </div>
+  
+            </form>
         </div>
+      </div>
+        
         <div class="container">
-          
-          <button class="btn btn-primary gifBtn" type="button" data-topic="Kim Possible" data-searchNum="10">Kim Possible</button>
-          <button class="btn btn-primary gifBtn" type="button" data-topic="Pusheen" data-searchNum="10">Pusheen</button>
-          <button class="btn btn-primary gifBtn" type="button" data-topic="Grumpy Cat" data-searchNum="10">Grumpy Cat</button>
+          <div class="card-body">
+            <h5 class="card-title">Previous Searches</h5>
+            <button class="btn btn-primary gifBtn" type="button" data-topic="Kim Possible" data-searchNum="10">Kim Possible - 10</button>
+          <button class="btn btn-primary gifBtn" type="button" data-topic="Pusheen" data-searchNum="10">Pusheen - 10</button>
+          <button class="btn btn-primary gifBtn" type="button" data-topic="Grumpy Cat" data-searchNum="10">Grumpy Cat - 10</button>
           <div id="button-area">
             <!-- buttons go here -->
           </div>
+          </div>
+          
         </div>
     </div>
 
-    <div class="col-12 col-md-9">
+    <div id="themGifs" class="col-12 col-md-9">
       <div class="container" id="giphyArea">
         
       </div>
