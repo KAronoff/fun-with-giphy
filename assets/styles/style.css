@@ -90,6 +90,7 @@ body {
 
 #onlyMobile {
   visibility: hidden;
+  font-family: 'Luckiest Guy', cursive;
 }
 #information {
   box-shadow: 5px 5px 30px;
