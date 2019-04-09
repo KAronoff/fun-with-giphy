@@ -24,7 +24,7 @@ $(document).ready(function(){
       .attr("data-searchNum", number)
       .text(topic + " - " + number);
 
-      $("#button-area").prepend($newbtn);
+      $("#button-area").append($newbtn);
   }
 
   topicArr.forEach(function (item){
@@ -89,6 +89,11 @@ $(document).ready(function(){
       alert("You searched for too many results. Please choose 1-25")
       return false;
     }
+    var $pLoad = $("<h2>")
+    $pLoad.text("Loading gifs...")
+
+    $("#giphyArea").prepend($pLoad);
+
     var searchTermVar = searchField;
     var queryURL = "https://api.giphy.com/v1/gifs/search?"
     var parameters = {"api_key":"pWCQRgiCN7dmL6YFmnlCyJz6px01doDw"};
@@ -107,10 +112,13 @@ $(document).ready(function(){
       // things needed: still image, animated image, rating
       // animated downsized image url path: giphyResult.data[i].images.downsized.url
       // still downsized image url path: giphyResult.data[i].images.downsized_still.url
+      $("#giphyArea").empty();
+        
       for (i=0; i < parameters.limit ; i++){
         animatedURL = giphyResult.data[i].images.downsized.url;
         stillURL = giphyResult.data[i].images.downsized_still.url;
       
+        
       var $resultImg = $("<img>")
       .addClass(".imgGifResult my-3 mx-3")
       .attr("src", stillURL)

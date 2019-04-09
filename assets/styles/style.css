@@ -12,7 +12,7 @@ body {
   color: #F2E9E4;
   background-color: #558B6E;
 }
-.jumbotron h1, h5 {
+.jumbotron h1, h2, h5 {
   font-family: 'Luckiest Guy', cursive;
 }
 .btn-primary {
@@ -88,6 +88,9 @@ body {
   width: 50%;
 }
 
+#onlyMobile {
+  visibility: hidden;
+}
 #information {
   box-shadow: 5px 5px 30px;
 }
@@ -99,4 +102,10 @@ form {
 img {
   border: 3px solid #323B3A;
   box-shadow: 0 0 5px;
+}
+
+@media only screen and (max-width: 650px) {
+  #onlyMobile {
+    visibility: visible;
+  }
 }
