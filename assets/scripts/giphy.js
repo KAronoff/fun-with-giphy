@@ -38,6 +38,7 @@ $(document).ready(function(){
     var changeThatNumber = $("#numInput").val().trim();
     var $dataTopic = $(this).attr("data-topic")
 
+    
     if (changeThatNumber === ""){
       var $dataNumber = $(this).attr("data-searchNum");
     }
@@ -66,6 +67,10 @@ $(document).ready(function(){
     $("#giphyArea").empty();
     var searchInputVar = $("#searchTxt").val();
     var numInputVar = $("#numInput").val();
+
+    if (searchInputVar === "" || numInputVar === ""){
+      return false;
+    }
     console.log(searchInputVar, numInputVar);
     // display the new button
     displayBtn(searchInputVar, numInputVar);
@@ -76,6 +81,7 @@ $(document).ready(function(){
     // clear the search field
     $("#searchTxt").val("");
     $("#numInput").val("");
+  
   })
 
   function searchForGiphy (searchField, numField){
@@ -138,6 +144,7 @@ $(document).ready(function(){
 
   $("#clearBtn").on("click", function(){
     $("#button-area").empty();
+    $("#giphyArea").empty();
   })
   
 });
