@@ -16,5 +16,9 @@ Each button has both a search term and a number associated to it. The number say
 
 To change the results number on an existing button (either one of the original 3 or a new one added later), enter a number in the *number of results* field, then press the topic. For example, to change Kim Possible from *Kim Possible - 10* to *Kim Possible -20*, insert the number *20* in the field, and then press *Kim Possible*. The number attached to the button will change and it will remember the last number of search results. This prevents needing to create multiple buttons with the same search criteria.
 
+There is a loading text that appears while loading the page.
+
+There is also mobile compatability.
+
 ##Future Updates
 Future updates would include the ability to save search results to local storage, so the page would remember results upon returning. 
